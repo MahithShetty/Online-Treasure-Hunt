@@ -42,13 +42,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// mysql://b5868b120a32b2:87c098c2@us-cdbr-iron-east-02.cleardb.net/heroku_143aca5f7409772?reconnect=true
 
 var dbOptions = {
-  host: 'us-cdbr-iron-east-02.cleardb.net',
-  user: 'b5868b120a32b2',
-  password: '87c098c2',
-  database: 'heroku_143aca5f7409772'
+  host: 'localhost',
+  user: 'root',
+  password: '',
+  database: 'treasure_hunt'
 };
 app.use(myConnection(mysql, dbOptions, 'single'));
 
